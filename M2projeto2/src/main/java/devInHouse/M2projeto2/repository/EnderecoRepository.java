@@ -1,2 +1,9 @@
-package devInHouse.M2projeto2.repository;public interface EnderecoRepository {
+package devInHouse.M2projeto2.repository;
+
+import devInHouse.M2projeto2.model.Endereco;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface EnderecoRepository extends JpaRepository<Endereco, Integer> {
 }

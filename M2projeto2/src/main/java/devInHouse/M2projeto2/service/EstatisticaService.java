@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class EstatisticasService {
+public class EstatisticaService {
     @Autowired
     private ConsultaRepository consultaRepository;
     @Autowired
@@ -16,8 +16,11 @@ public class EstatisticasService {
     @Autowired
     private PacienteRepository pacienteRepository;
 
-    private Estatistica listaQtd(){
+    public Estatistica listarQtd(){
         Estatistica estatistica = new Estatistica();
-        estatistica.setQtdConsultas(consultaRepository.);
+        estatistica.setQtdConsultas(consultaRepository.count());
+        estatistica.setQtdExames(exameRepository.count());
+        estatistica.setQtdPacientes(pacienteRepository.count());
+        return estatistica;
     }
 }

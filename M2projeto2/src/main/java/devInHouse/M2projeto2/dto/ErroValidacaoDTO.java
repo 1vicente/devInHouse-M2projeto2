@@ -1,4 +1,4 @@
-package devInHouse.M2projeto2.controller;
+package devInHouse.M2projeto2.dto;
 
 import org.springframework.validation.FieldError;
 
