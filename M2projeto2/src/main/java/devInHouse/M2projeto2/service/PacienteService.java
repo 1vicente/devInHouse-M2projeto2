@@ -124,6 +124,7 @@ public class PacienteService {
             }
             throw new RuntimeException("Paciente com consulta(s) "+idConsultas.toString()+" e/ou exame(s) "+ idExames +" cadastrado(s)");
         } else {
+            Paciente pacienteEncontrado = repository.findById(id).orElseThrow(EntityNotFoundException::new);
             repository.deleteById(id);
         }
     }

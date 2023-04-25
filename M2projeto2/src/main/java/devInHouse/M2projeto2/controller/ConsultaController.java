@@ -23,7 +23,7 @@ public class ConsultaController {
     private ConsultaService service;
 
     @PostMapping
-    public ResponseEntity<Consulta> salva(@RequestBody ConsultaDTO consultaDTO, UriComponentsBuilder uriBuilder){
+    public ResponseEntity<Consulta> salva(@RequestBody @Valid ConsultaDTO consultaDTO, UriComponentsBuilder uriBuilder){
         Consulta consulta = service.salvar(consultaDTO);
         URI uri = uriBuilder.path("/api/consulta/{id}").buildAndExpand(consulta.getId()).toUri();
         return ResponseEntity.created(uri).body(consulta);
