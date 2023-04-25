@@ -22,7 +22,7 @@ public class ExameController {
     @Autowired
     private ExameService service;
     @PostMapping
-    public ResponseEntity<Exame> salva(@RequestBody ExameDTO exameDTO, UriComponentsBuilder uriBuilder){
+    public ResponseEntity<Exame> salva(@RequestBody @Valid ExameDTO exameDTO, UriComponentsBuilder uriBuilder){
         Exame exame = service.salvar(exameDTO);
         URI uri = uriBuilder.path("/api/exames/{id}").buildAndExpand(exame.getId()).toUri();
         return ResponseEntity.created(uri).body(exame);

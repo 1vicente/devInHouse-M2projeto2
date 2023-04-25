@@ -35,9 +35,6 @@ public class ExameService {
         if (exameDTO.getNome() != null || exameDTO.getNome().length() > 0) {
             exameEncontrado.setNome(exameDTO.getNome());
         }
-        if (exameDTO.getData() != null || exameDTO.getData().length() > 0) {
-            exameEncontrado.setData(exameDTO.getData());
-        }
         if (exameDTO.getTipo() != null || exameDTO.getTipo().length() > 0) {
             exameEncontrado.setTipo(exameDTO.getTipo());
         }

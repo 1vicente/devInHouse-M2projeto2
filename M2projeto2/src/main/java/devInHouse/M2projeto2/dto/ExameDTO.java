@@ -2,6 +2,7 @@ package devInHouse.M2projeto2.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 
 public class ExameDTO {
     @NotNull
@@ -9,6 +10,7 @@ public class ExameDTO {
     private String nome;
     @NotNull
     @NotBlank
+    @Pattern(regexp = "^[0-9]{2}(/|.)[0-3][0-9](/|.)[0-9]{4}$" ,message = "Opção inválida, use a data no formato (dd/MM/yyyy) 21/12/2012 ou 21-12-2012")
     private String data;
     @NotNull
     @NotBlank
