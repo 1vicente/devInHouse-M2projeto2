@@ -18,10 +18,10 @@ public class MedicoController {
     @Autowired
     private MedicoService service;
     @PostMapping
-    public ResponseEntity<MedicoDTO> salva(@RequestBody @Valid MedicoDTO medicoDTO, UriComponentsBuilder uriBuilder) {
+    public ResponseEntity<Medico> salva(@RequestBody @Valid MedicoDTO medicoDTO, UriComponentsBuilder uriBuilder) {
         Medico medico = service.salvar(medicoDTO);
         URI uri = uriBuilder.path("/api/usuarios/{id}").buildAndExpand(medico.getId()).toUri();
-        return ResponseEntity.created(uri).body(medicoDTO);
+        return ResponseEntity.created(uri).body(medico);
     }
 
     @PutMapping("/{id}")

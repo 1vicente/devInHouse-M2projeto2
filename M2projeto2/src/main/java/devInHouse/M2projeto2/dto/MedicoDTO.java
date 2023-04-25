@@ -2,6 +2,7 @@ package devInHouse.M2projeto2.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
 public class MedicoDTO extends PessoaDTO{
@@ -10,6 +11,7 @@ public class MedicoDTO extends PessoaDTO{
     private String crm;
     @NotNull
     @NotBlank
+    @Pattern(regexp = "^[Cc]l[ií]nico [Gg]eral|[Aa]nestesista|[Dd]ermatologia|[Gg]inecologia|[Nn]eurologia|[Pp]ediatria|[Pp]siquiatria|[Oo]rtopedia$", message = "Opção inválida, use apenas 'Clínico Geral, Anestesista, Dermatologia, Ginecologia, Neurologian Pediatria, Psiquiatria ou Ortopedia'")
     private String especializacaoClinica;
     @Size(message = "Senha menor que 8 caracteres", min = 8)
     private String senha;
