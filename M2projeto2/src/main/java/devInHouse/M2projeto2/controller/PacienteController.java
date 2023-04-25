@@ -23,10 +23,10 @@ public class PacienteController {
     private PacienteService service;
 
     @PostMapping
-    public ResponseEntity<PacienteDTO> salva(@RequestBody @Valid PacienteDTO pacienteDTO, UriComponentsBuilder uriBuilder) {
+    public ResponseEntity<Paciente> salva(@RequestBody @Valid PacienteDTO pacienteDTO, UriComponentsBuilder uriBuilder) {
         Paciente paciente = service.salvar(pacienteDTO);
         URI uri = uriBuilder.path("/api/usuarios/{id}").buildAndExpand(paciente.getId()).toUri();
-        return ResponseEntity.created(uri).body(pacienteDTO);
+        return ResponseEntity.created(uri).body(paciente);
     }
 
     @PutMapping("/{id}")
@@ -52,10 +52,13 @@ public class PacienteController {
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleta(@PathVariable("id") Integer id) {
         try {
+            System.out.println(id);
             service.deletar(id);
             return ResponseEntity.noContent().build();
         } catch (NoSuchElementException e) {
             throw new EntityNotFoundException();
+        } catch (RuntimeException e){
+            return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
 }

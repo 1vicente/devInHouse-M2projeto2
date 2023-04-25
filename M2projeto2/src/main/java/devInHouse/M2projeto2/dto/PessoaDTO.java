@@ -3,7 +3,10 @@ package devInHouse.M2projeto2.dto;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import org.hibernate.annotations.Filter;
 import org.hibernate.validator.constraints.br.CPF;
+import org.springframework.validation.annotation.Validated;
 
 public class PessoaDTO {
     @NotBlank
@@ -11,6 +14,7 @@ public class PessoaDTO {
     private String nomeCompleto;
     @NotBlank
     @NotNull
+    @Pattern(regexp = "^[0-9]{2}(/|.)[0-3][0-9](/|.)[0-9]{4}$" ,message = "Opção inválida, use a data no formato (dd/MM/yyyy) 21/12/2012 ou 21-12-2012")
     private String dataNascimento;
     @CPF
     @NotBlank
@@ -21,6 +25,7 @@ public class PessoaDTO {
     private String rg;
     @NotBlank
     @NotNull
+    @Pattern(regexp = "^[Ss]olteiro|[Cc]asado|[Ss]eparado|[Dd]ivorciado|[Vv]i[uú]vo$", message = "Opção inválida, use apenas 'solteiro, casado, divorciado ou viúvo'")
     private String estadoCivil;
     @NotBlank
     @NotNull

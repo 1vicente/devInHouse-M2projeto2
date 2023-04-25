@@ -2,14 +2,19 @@ package devInHouse.M2projeto2.service;
 
 import devInHouse.M2projeto2.dto.PacienteDTO;
 import devInHouse.M2projeto2.mapper.PacienteMapper;
+import devInHouse.M2projeto2.model.Consulta;
+import devInHouse.M2projeto2.model.Exame;
 import devInHouse.M2projeto2.model.Paciente;
+import devInHouse.M2projeto2.repository.ConsultaRepository;
 import devInHouse.M2projeto2.repository.EnderecoRepository;
+import devInHouse.M2projeto2.repository.ExameRepository;
 import devInHouse.M2projeto2.repository.PacienteRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,6 +24,10 @@ public class PacienteService {
     private PacienteRepository repository;
     @Autowired
     private EnderecoRepository enderecoRepository;
+    @Autowired
+    private ExameRepository exameRepository;
+    @Autowired
+    private ConsultaRepository consultaRepository;
 
     @Autowired
     private PacienteMapper mapper;
@@ -98,6 +107,24 @@ public class PacienteService {
     }
 
     public void deletar(Integer id) {
-        repository.deleteById(id);
+        List<Optional<Consulta>> listaConsulta =  consultaRepository.findByIdPaciente_id(id);
+        List<Optional<Exame>> listaExame = exameRepository.findByIdPaciente_id(id);
+        List<Integer> idConsultas = new ArrayList<>();
+        List<Integer> idExames = new ArrayList<>();
+
+        if (listaConsulta.size() >= 1 || listaExame.size() >= 1){
+            for (int i = 0; listaConsulta.size() > i; i++) {
+                Optional<Consulta> consultasPaciente = listaConsulta.get(i);
+                idConsultas.add(consultasPaciente.get().getId());
+            }
+
+            for (int i = 0; listaExame.size() > i; i++) {
+                Optional<Exame> examesPaciente = listaExame.get(i);
+                idExames.add(examesPaciente.get().getId());
+            }
+            throw new RuntimeException("Paciente com consulta(s) "+idConsultas.toString()+" e/ou exame(s) "+ idExames +" cadastrado(s)");
+        } else {
+            repository.deleteById(id);
+        }
     }
 }
