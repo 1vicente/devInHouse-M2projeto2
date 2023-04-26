@@ -1,0 +1,608 @@
+{
+	"info": {
+		"_postman_id": "4e090bd7-135a-4c28-97bb-e549a0c7c487",
+		"name": "M2-Projeto2 - Vicente",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Pacientes",
+			"item": [
+				{
+					"name": "/api/pacientes",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listaAlergia\": \"Sulfa, Composto As\",\r\n    \"listaCuidadosE\": \"N/A\",\r\n    \"contatoEmergencia\":\"(48) 99999-9999\",\r\n    \"convenio\":\"Unimed\",\r\n    \"numeroConvenio\":\"123123-12\",\r\n    \"validadeConvenio\":\"20/12/2023\",\r\n    \"nomeCompleto\": \"Vicente Paciente Postman\",\r\n    \"cpf\":\"75692174030\",\r\n    \"rg\":\"12312312\",\r\n    \"estadoCivil\":\"Solteiro\",\r\n    \"telefone\":\"(48) 99999-9999\",\r\n    \"email\":\"vicent@paciente.com\",\r\n    \"naturalidade\":\"Florianópolis\",\r\n    \"genero\":\"Masculino\",\r\n    \"dataNascimento\":\"12/12/1994\",\r\n    \"id_endereco\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/pacientes",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pacientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/pacientes",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listaAlergia\": \"Sulfa, Composto As\",\r\n    \"listaCuidadosE\": \"N/A\",\r\n    \"contatoEmergencia\":\"(48) 99999-9999\",\r\n    \"convenio\":\"Unimed\",\r\n    \"numeroConvenio\":\"123123-12\",\r\n    \"validadeConvenio\":\"20/12/2023\",\r\n    \"nomeCompleto\": \"Vicente Paciente Editado Postman\",\r\n    \"cpf\":\"75692174030\",\r\n    \"rg\":\"12312312\",\r\n    \"estadoCivil\":\"Solteiro\",\r\n    \"telefone\":\"(48) 99999-9999\",\r\n    \"email\":\"vicent@paciente.com\",\r\n    \"naturalidade\":\"Florianópolis\",\r\n    \"genero\":\"Masculino\",\r\n    \"dataNascimento\":\"12/12/1994\",\r\n    \"id_endereco\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/pacientes/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pacientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/pacientes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/pacientes",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pacientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/pacientes/1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/pacientes/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pacientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/pacientes",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/pacientes/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pacientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Medicos",
+			"item": [
+				{
+					"name": "/api/usuarios",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"crm\":\"sadkljasdklsa\",\r\n    \"especializacaoClinica\":\"Terra\",\r\n    \"senha\":\"senha12312312\",\r\n    \"nomeCompleto\": \"vicentePessoa\",\r\n    \"cpf\":\"0840\",\r\n    \"rg\":\"1231233\",\r\n    \"estadoCivil\":\"Baguloeh Doido\",\r\n    \"telefone\":\"123123123\",\r\n    \"email\":\"vicentevicente.com\",\r\n    \"naturalidade\":\"flipix\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/usuarios",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/usuarios",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"crm\":\"12312/SC\",\r\n    \"especializacaoClinica\":\"Ginecologia\",\r\n    \"senha\":\"senha12312312\",\r\n    \"nomeCompleto\": \"Vicente Medico Postman\",\r\n    \"cpf\":\"70843688092\",\r\n    \"rg\":\"1231233\",\r\n    \"estadoCivil\":\"Solteiro\",\r\n    \"telefone\":\"(48) 99999-9999\",\r\n    \"email\":\"vicent@medico.com\",\r\n    \"naturalidade\":\"Florianópolis\",\r\n    \"genero\":\"Masculino\",\r\n    \"dataNascimento\":\"12/12/1994\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/usuarios",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/usuarios/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"crm\":\"12312/SC\",\r\n    \"especializacaoClinica\":\"Ginecologia\",\r\n    \"senha\":\"senha12312312\",\r\n    \"nomeCompleto\": \"Vicente Medico Editado Postman\",\r\n    \"cpf\":\"70843688092\",\r\n    \"rg\":\"1231233\",\r\n    \"estadoCivil\":\"Solteiro\",\r\n    \"telefone\":\"(48) 99999-9999\",\r\n    \"email\":\"vicent@medico.com\",\r\n    \"naturalidade\":\"Florianópolis\",\r\n    \"genero\":\"Masculino\",\r\n    \"dataNascimento\":\"12/12/1994\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/usuarios/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/usuarios/{id}/senha",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"senhaAtual\":\"123123123123\",\r\n    \"senhaNova\":\"vicenteTesteSenha\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/usuarios/1/senha",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios",
+								"1",
+								"senha"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Consulta",
+			"item": [
+				{
+					"name": "/api/consultas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"motivo\":\"Tosse\",\r\n    \"data\":\"24/04/2023\",\r\n    \"descProblema\": \"Pulmão carregado\",\r\n    \"medicacaoReceitada\": \"Expectorante\",\r\n    \"dosagensPrecaucoes\": \"3x pro dia uma colher\",\r\n    \"id_paciente\": 1,\r\n    \"id_medico\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/consultas",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"consultas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/consultas/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"motivo\":\"Tosse Excessivo\",\r\n    \"data\":\"24/04/2023\",\r\n    \"descProblema\": \"Pulmão carregado\",\r\n    \"medicacaoReceitada\": \"Expectorante\",\r\n    \"dosagensPrecaucoes\": \"3x pro dia uma colher\",\r\n    \"id_paciente\": 1,\r\n    \"id_medico\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/consultas/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"consultas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/consultas/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/consultas/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"consultas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/consultas/{id}",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/consultas/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"consultas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Exame",
+			"item": [
+				{
+					"name": "/api/exames",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"Raio-X Torax\",\r\n    \"data\": \"24/04/2023\",\r\n    \"tipo\": \"Raio-x\",\r\n    \"laboratorio\": \"Clínica Continente\",\r\n    \"url\":\"https://www.boaconsulta.com/blog/wp-content/uploads/2023/01/raio-x-torax-tudo-sobre.jpg\",\r\n    \"resultado\": \"Pulmão com catarro\",\r\n    \"id_paciente\": 1,\r\n    \"id_medico\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/exames",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"exames"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/exames/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"Raio-X Torax e Abdomem\",\r\n    \"data\": \"24/04/2023\",\r\n    \"tipo\": \"Raio-x\",\r\n    \"laboratorio\": \"Clínica Continente\",\r\n    \"url\":\"https://www.boaconsulta.com/blog/wp-content/uploads/2023/01/raio-x-torax-tudo-sobre.jpg\",\r\n    \"resultado\": \"Pulmão com catarro\",\r\n    \"id_paciente\": 1,\r\n    \"id_medico\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/exames/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"exames",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/exames/{id}",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"vicente Exame2\",\r\n    \"data\": \"Data\",\r\n    \"tipo\": \"Sangue\",\r\n    \"laboratorio\": \"Bilau\",\r\n    \"url\":\"asdasdas\",\r\n    \"resultado\": \"chesasdas\",\r\n    \"idPaciente\": {\r\n        \"id\": 2\r\n    },\r\n    \"idMedico\":{\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/exames/7",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"exames",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/exames/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"vicente Exame2\",\r\n    \"data\": \"Data\",\r\n    \"tipo\": \"Sangue\",\r\n    \"laboratorio\": \"Bilau\",\r\n    \"url\":\"asdasdas\",\r\n    \"resultado\": \"chesasdas\",\r\n    \"idPaciente\": {\r\n        \"id\": 2\r\n    },\r\n    \"idMedico\":{\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/exames/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"exames",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Enderecos",
+			"item": [
+				{
+					"name": "/api/enderecos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cep\":\"88100-00\",\r\n    \"cidade\":\"São José\",\r\n    \"estado\":\"Santa Catarina\",\r\n    \"logradouro\":\"Rua dos Açores\",\r\n    \"numero\":\"123\",\r\n    \"complemento\":\"Casa amarela\",\r\n    \"bairro\":\"Jaguaruna\",\r\n    \"pontoReferencia\":\"Rua sem saída\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/enderecos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"enderecos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/enderecos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/enderecos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"enderecos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Estatisticas",
+			"item": [
+				{
+					"name": "/api/estatisticas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/estatisticas",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"estatisticas"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
